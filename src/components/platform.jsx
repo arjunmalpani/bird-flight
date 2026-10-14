@@ -8,7 +8,7 @@ export default function Platform() {
                 position={[0, -2.99, 0]}
                 receiveShadow
             >
-                <planeGeometry args={[60, 60]} />
+                <planeGeometry args={[100, 100]} />
                 <shadowMaterial opacity={0.5} />
             </mesh>
             <Grid
@@ -22,7 +22,7 @@ export default function Platform() {
                 sectionColor="#222"
                 fadeDistance={145}
                 fadeStrength={1.5}
-                // infiniteGrid
+                infiniteGrid
             />
         </>
     );

@@ -5,16 +5,16 @@ export default function Lighting() {
         <>
             <ambientLight intensity={1} />
             <directionalLight
-                position={[4, 12, 4]}
+                position={[10, 20, 10]}
                 intensity={2}
                 castShadow
                 shadow-mapSize={[2048, 2048]}
-                shadow-camera-left={-10}
-                shadow-camera-right={10}
-                shadow-camera-top={10}
-                shadow-camera-bottom={-10}
+                shadow-camera-left={-50}
+                shadow-camera-right={50}
+                shadow-camera-top={50}
+                shadow-camera-bottom={-50}
                 shadow-camera-near={1}
-                shadow-camera-far={30}
+                shadow-camera-far={200}
                 shadow-bias={-0.0005}
             />
             {/* <Environment

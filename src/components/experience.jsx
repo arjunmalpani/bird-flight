@@ -5,13 +5,26 @@ import { useRef } from "react";
 import Lighting from "./lighting";
 import Platform from "./platform";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
+import { useControls } from "leva";
 
 function Experience() {
+    const flyerControls = useControls("Flyer Controls", {
+        height: { value: 4, min: 1, max: 30, step: 1 },
+        bob: { value: 0.5, min: 0, max: 1, step: 0.1 },
+        speed: { value: 0.8, min: 0, max: 2, step: 0.1 },
+        radius: { value: 6, min: 0, max: 20, step: 1 },
+        direction: { options: ["front", "back"] },
+    });
+    const birdControls = useControls("Bird Controls", {
+        size: { value: 10, min: 1, max: 20, step: 1 },
+        animate: true,
+        glow: { value: 1.5, min: 0, max: 3, step: 0.1 },
+    });
     return (
         <>
             <Lighting />
-            <Flyer height={0} speed={1}>
-                <Bird animate glow={1.5} size={10} />
+            <Flyer {...flyerControls}>
+                <Bird {...birdControls} />
             </Flyer>
             <Platform />
             <EffectComposer>

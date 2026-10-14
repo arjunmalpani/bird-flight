@@ -52,7 +52,7 @@ export default function Bird({ size, glow, animate, ...props }) {
         return () => {
             action.fadeOut(0.2).stop();
         };
-    }, [actions, names]);
+    }, [actions, names, animate]);
 
     return (
         <group ref={group} {...props}>
