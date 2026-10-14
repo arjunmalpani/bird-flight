@@ -4,7 +4,7 @@ A 3D scene of an animated phoenix flying in a circle over a glowing grid, built 
 
 ![Preview](./screenshots/bird-flight.png)
 
-**Live demo:** https://your-app.vercel.app
+**Live demo:** https://bird-flight.vercel.app
 
 ## Features
 
