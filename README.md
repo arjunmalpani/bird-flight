@@ -1,16 +1,37 @@
-# React + Vite
+# Phoenix Flight
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A 3D scene of an animated phoenix flying in a circle over a glowing grid, built with React Three Fiber.
 
-Currently, two official plugins are available:
+![Preview](./screenshots/bird-flight.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Live demo:** https://your-app.vercel.app
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Animated glTF model: wing flap clip played with drei's `useAnimations`
+- Circular flight path with a gentle bob, and the bird turns to face its direction of travel
+- Soft real-time shadows on a grid floor
+- Bloom post-processing, so only the bird's emissive feathers glow
+- Orbit controls limited to stay above the floor and outside the flight path
 
-## Expanding the Oxlint configuration
+## Tech
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+React, Vite, Three.js, @react-three/fiber, @react-three/drei, @react-three/postprocessing
+
+## Run locally
+
+    npm install
+    npm run dev
+
+## What I learned
+
+- How an animated model is built: skeleton, skinned meshes and clips
+- Why clips flap in place, and why travel is done by moving a parent group
+- Auto-sizing and centring a model from its bounding box
+- Fixing see-through feathers with `alphaTest` and `DoubleSide`
+- Culling and shadow-camera setup for skinned meshes
+- Making bloom affect only chosen parts, using the threshold and emissive strength
+
+## Credits
+
+"MODEL TITLE" by AUTHOR NAME, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), via [SOURCE](SOURCE_URL). Modified: scaled and re-centred, materials and glow adjusted.

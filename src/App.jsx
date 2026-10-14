@@ -4,7 +4,7 @@ import Experience from "./components/experience";
 function App() {
     return (
         <div className="h-dvh w-full">
-            <Canvas shadows camera={{ position: [0, 6, 18], fov: 50 }}>
+            <Canvas shadows camera={{ position: [12, 6, 10], fov: 50 }}>
                 <Experience />
             </Canvas>
             <p className="absolute bottom-2 right-3 max-w-[70%] text-right text-xs leading-tight text-white/60">

@@ -11,7 +11,7 @@ function Experience() {
         <>
             <Lighting />
             <Flyer height={0} speed={1}>
-                <Bird glow={1.5} size={10} />
+                <Bird animate glow={1.5} size={10} />
             </Flyer>
             <Platform />
             <EffectComposer>

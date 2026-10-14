@@ -31,7 +31,7 @@ function prepare(scene, glow = 1.5) {
     });
 }
 
-export default function Bird({ size, glow, ...props }) {
+export default function Bird({ size, glow, animate, ...props }) {
     const group = useRef();
     const { scene, animations } = useGLTF(birdModel);
     const { actions, names } = useAnimations(animations, group);
@@ -42,9 +42,16 @@ export default function Bird({ size, glow, ...props }) {
         prepare(scene, glow);
     }, [scene, glow]);
     useEffect(() => {
-        const action = actions[[names[0]]];
-        action?.reset().play();
-        return () => action?.stop();
+        if (!animate || !names[0]) return;
+
+        const action = actions[names[0]];
+        if (!action) return;
+
+        action.reset().fadeIn(0.2).play();
+
+        return () => {
+            action.fadeOut(0.2).stop();
+        };
     }, [actions, names]);
 
     return (
